@@ -1,4 +1,5 @@
 *.out
+input.txt
 
 # Prerequisites
 *.d
