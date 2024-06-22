@@ -26,9 +26,9 @@ Here's how the problem naming convention works.
 1. First, write down the contest number.
 2. Then, append the problem letter, in lower case.
 3. Append a dash.
-4. Finally, append the problem name in the English locale, all in lower case, with any whitespace and punctuation replaced by dashes.
+4. Finally, append the Codeforces problem title in the English locale, all in lower case, with any whitespace and punctuation replaced by dashes.
 
-### Building and debugging Visual Studio Code
+### Building and debugging in vscodium
 
 Each directory created an populated using `new-problem.sh` can be opened in Visual Studio Code or [vscodium](https://vscodium.com/) as a self-contained project. Use the following great extensions to make the most out of the setup:
 
@@ -48,4 +48,4 @@ Solutions for the following problems included in the repository do not yet pass 
 ## Thanks
 
 * Mike Mirzayanov for [Codeforces](https://codeforces.com/).
-* [cppreference.com](https://en.cppreference.com) for the C++ reference.
+* [cppreference.com](https://en.cppreference.com) for the always-up-to-date C++ reference.
