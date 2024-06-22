@@ -16,17 +16,14 @@ This repo includes some tooling to make starting work on new problems easier. Us
 To begin working on a new problem, first make sure these are installed:
 * a POSIX-compliant shell,
 * a POSIX-compliant `make`,
-* `sed`.
+* [`j2cli`](https://pypi.org/project/j2cli/),
+* [`python-slugify`](https://pypi.org/project/python-slugify/).
 
-Then, run `./new-problem.sh $PROBLEM_NAME`.
+Then, run `./new-problem.sh $CONTEST_NUMBER $PROBLEM_LETTER $PROBLEM_TITLE`.
 
-Replace `$PROBLEM_NAME` with the name of the problem following the convention.
+Example for the problem [1791 A: Codeforces Checking](https://codeforces.com/problemset/problem/1791/A?locale=en):
 
-Here's how the problem naming convention works.
-1. First, write down the contest number.
-2. Then, append the problem letter, in lower case.
-3. Append a dash.
-4. Finally, append the Codeforces problem title in the English locale, all in lower case, with any whitespace and punctuation replaced by dashes.
+`./new-problem.sh 1791 a Codeforces Checking`
 
 ### Building and debugging in vscodium
 
