@@ -42,6 +42,18 @@ To build a project, run `make` in the project directory. Use `make run` to build
 
 To debug the project, first build it using `make`. Then use Run -> Start Debugging.
 
+### Updating README
+
+To update the statistics below ensure that these are installed in addition to the above prerequisites:
+
+* `bc`.
+
+First, update `.templates/problem-count` with the total number of problems that are in the Codeforces problem set.
+
+Then, run `./update-readme.sh`.
+
+When making other changes to the README, edit `.templates/global-README.md.j2` and run `./update-readme.sh` rather than editing the `README.md` directly.
+
 ## Statistics
 
 * Total problems in Codeforces problem set: 9606
