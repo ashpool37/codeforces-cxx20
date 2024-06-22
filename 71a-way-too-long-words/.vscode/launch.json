@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Way Too Long Words",
+            "program": "${workspaceFolder}/71a-way-too-long-words.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

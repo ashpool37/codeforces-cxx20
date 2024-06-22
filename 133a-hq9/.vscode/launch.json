@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug HQ9+",
+            "program": "${workspaceFolder}/133a-hq9.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

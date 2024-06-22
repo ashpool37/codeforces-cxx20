@@ -1,13 +1,10 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug 266a-stones-on-the-table",
+            "name": "Debug Stones on the Table",
             "program": "${workspaceFolder}/266a-stones-on-the-table.out",
             "args": [],
             "cwd": "${workspaceFolder}"

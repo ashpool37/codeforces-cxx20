@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Next Round",
+            "program": "${workspaceFolder}/158a-next-round.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

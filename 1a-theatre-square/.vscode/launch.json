@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Theatre Square",
+            "program": "${workspaceFolder}/1a-theatre-square.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

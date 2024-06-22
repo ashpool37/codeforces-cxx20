@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Bit++",
+            "program": "${workspaceFolder}/282a-bit.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
