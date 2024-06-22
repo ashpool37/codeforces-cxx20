@@ -11,7 +11,8 @@ The C++ version might be upgraded in the future following adoption by Codeforces
 This repo includes some tooling to make starting work on new problems easier. Use the included script to create:
 * a `main.cpp` containing a Hello World,
 * a `.clangd` to configure the clangd language server,
-* and a POSIX-compliant Makefile.
+* a POSIX-compliant Makefile,
+* and a README linking to the problem statement on Codeforces.
 
 To begin working on a new problem, first make sure these are installed:
 * a POSIX-compliant shell,
