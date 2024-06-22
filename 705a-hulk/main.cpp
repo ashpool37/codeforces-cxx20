@@ -1,5 +1,4 @@
 #include <iostream>
-#include <sstream>
 
 int main() {
     unsigned feeling_levels;
