@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Divisibility Problem",
+            "program": "${workspaceFolder}/1328a-divisibility-problem.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
