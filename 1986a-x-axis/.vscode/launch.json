@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug X Axis",
+            "program": "${workspaceFolder}/1986a-x-axis.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
