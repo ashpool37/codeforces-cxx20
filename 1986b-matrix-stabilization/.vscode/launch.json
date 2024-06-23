@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Matrix Stabilization",
+            "program": "${workspaceFolder}/1986b-matrix-stabilization.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
