@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Arrival of the General",
+            "program": "${workspaceFolder}/144a-arrival-of-the-general.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
