@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Pangram",
+            "program": "${workspaceFolder}/520a-pangram.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
