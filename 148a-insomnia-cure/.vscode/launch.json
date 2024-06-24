@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Insomnia cure",
+            "program": "${workspaceFolder}/148a-insomnia-cure.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
