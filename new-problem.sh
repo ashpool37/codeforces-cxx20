@@ -16,10 +16,10 @@ shift 2
 export problem_title="$@"
 export problem="${contest_number}${problem_letter_lower}-$(slugify "${problem_title}")"
 
-mkdir "${problem}"
-mkdir "${problem}/.vscode"
-j2 -o "${problem}/Makefile" .templates/Makefile.j2
-j2 -o "${problem}/.vscode/launch.json" .templates/launch.json.j2
-j2 -o "${problem}/README.md" .templates/README.md.j2
-cp .templates/.clangd "${problem}/.clangd"
-cp .templates/main.cpp "${problem}/main.cpp"
+mkdir "problems/${problem}"
+mkdir "problems/${problem}/.vscode"
+j2 -o "problems/${problem}/Makefile" .templates/Makefile.j2
+j2 -o "problems/${problem}/.vscode/launch.json" .templates/launch.json.j2
+j2 -o "problems/${problem}/README.md" .templates/README.md.j2
+cp .templates/.clangd "problems/${problem}/.clangd"
+cp .templates/main.cpp "problems/${problem}/main.cpp"
