@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Hit the Lottery",
+            "program": "${workspaceFolder}/966a-hit-the-lottery.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
