@@ -18,8 +18,8 @@ export problem="${contest_number}${problem_letter_lower}-$(slugify "${problem_ti
 
 mkdir "problems/${problem}"
 mkdir "problems/${problem}/.vscode"
-j2 -o "problems/${problem}/Makefile" .templates/Makefile.j2
-j2 -o "problems/${problem}/.vscode/launch.json" .templates/launch.json.j2
-j2 -o "problems/${problem}/README.md" .templates/README.md.j2
-cp .templates/.clangd "problems/${problem}/.clangd"
-cp .templates/main.cpp "problems/${problem}/main.cpp"
+j2 -o "problems/${problem}/Makefile" templates/Makefile.j2
+j2 -o "problems/${problem}/.vscode/launch.json" templates/launch.json.j2
+j2 -o "problems/${problem}/README.md" templates/README.md.j2
+cp templates/.clangd "problems/${problem}/.clangd"
+cp templates/main.cpp "problems/${problem}/main.cpp"
