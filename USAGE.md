@@ -35,9 +35,11 @@ To debug the project, first build it using `make`. Then use Run -> Start Debuggi
 
 To update the statistics below ensure that these are installed in addition to the above prerequisites:
 
-* `bc`.
+* `bc`,
+* `jq`,
+* `curl`.
 
-First, update `templates/problem-count` with the total number of problems that are in the Codeforces problem set.
+First, make sure the problem count is up-to-date by running `scripts/update-problem-count.sh`.
 
 Then, run `scripts/update-readme.sh`.
 
