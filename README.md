@@ -14,11 +14,11 @@ Author's Codeforces profile: [Ashpool](https://codeforces.com/profile/Ashpool)
 ## Statistics
 
 * Total problems in Codeforces problem set: 9620
-    * Problems started: 59
-        * Problems solved: 57
+    * Problems started: 60
+        * Problems solved: 58
         * Problems not solved: 2
 
-Percentage of solved problems: .5925%
+Percentage of solved problems: .6029%
 
 ## Thanks
 
