@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Dubstep",
+            "program": "${workspaceFolder}/208a-dubstep.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
