@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iterator>
 #include <map>
 
 std::map<std::string, unsigned> const face_counts = {
