@@ -14,15 +14,15 @@ To begin working on a new problem, first make sure these are installed:
 * [`j2cli`](https://pypi.org/project/j2cli/),
 * [`python-slugify`](https://pypi.org/project/python-slugify/).
 
-Then, run `./new-problem.sh $CONTEST_NUMBER $PROBLEM_LETTER $PROBLEM_TITLE`.
+Then, run `scripts/new-problem.sh $CONTEST_NUMBER $PROBLEM_LETTER $PROBLEM_TITLE`.
 
 Example for the problem [1791 A: Codeforces Checking](https://codeforces.com/problemset/problem/1791/A?locale=en):
 
-`./new-problem.sh 1791 a Codeforces Checking`
+`scripts/new-problem.sh 1791 a Codeforces Checking`
 
 ## Building and debugging in vscodium
 
-Each directory created and populated using `new-problem.sh` can be opened in Visual Studio Code or [vscodium](https://vscodium.com/) as a self-contained project. Use the following great extensions to make the most out of the setup:
+Each directory created and populated using `scripts/new-problem.sh` can be opened in Visual Studio Code or [vscodium](https://vscodium.com/) as a self-contained project. Use the following great extensions to make the most out of the setup:
 
 * [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd),
 * [CodeLLDB](https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb).
@@ -37,8 +37,8 @@ To update the statistics below ensure that these are installed in addition to th
 
 * `bc`.
 
-First, update `.templates/problem-count` with the total number of problems that are in the Codeforces problem set.
+First, update `templates/problem-count` with the total number of problems that are in the Codeforces problem set.
 
-Then, run `./update-readme.sh`.
+Then, run `scripts/update-readme.sh`.
 
-When making other changes to the README, edit `.templates/global-README.md.j2` and run `./update-readme.sh` rather than editing the `README.md` directly.
+When making other changes to the README, edit `templates/global-README.md.j2` and run `scripts/update-readme.sh` rather than editing the `README.md` directly.
