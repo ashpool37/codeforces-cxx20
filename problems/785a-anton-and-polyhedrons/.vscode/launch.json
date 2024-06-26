@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Anton and Polyhedrons",
+            "program": "${workspaceFolder}/785a-anton-and-polyhedrons.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
