@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Catch the Coin",
+            "program": "${workspaceFolder}/1989a-catch-the-coin.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
