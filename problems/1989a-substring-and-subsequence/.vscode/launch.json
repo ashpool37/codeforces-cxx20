@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Substring and Subsequence",
+            "program": "${workspaceFolder}/1989a-substring-and-subsequence.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
