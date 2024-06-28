@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug IQ test",
+            "program": "${workspaceFolder}/25a-iq-test.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
