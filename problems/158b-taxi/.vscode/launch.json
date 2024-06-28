@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Taxi",
+            "program": "${workspaceFolder}/158b-taxi.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
