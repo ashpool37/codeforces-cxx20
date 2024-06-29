@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 
 unsigned modified_collatz(unsigned x, unsigned y) {
     x += 1;
@@ -19,16 +18,12 @@ int main() {
             if (x == 1) {
                 x += (k - i) % (y - 1);
                 i = k;
-            } 
-            else if(x < y) {
-                unsigned di = std::min(y - x, k - i);
-                x += di;
-                if(x == y) x = 1;
-                i += di;
             }
             else {
-                x = modified_collatz(x, y);
-                i++;
+                unsigned di = std::min((x / y + 1) * y - x, k - i);
+                x += di;
+                i += di;
+                while(x % y == 0) x = x / y;
             }
         }
 
