@@ -1,11 +1,5 @@
 #include <iostream>
 
-unsigned modified_collatz(unsigned x, unsigned y) {
-    x += 1;
-    while(x % y == 0) x = x / y;
-    return x;
-}
-
 int main() {
     unsigned test_count;
     std::cin >> test_count;
