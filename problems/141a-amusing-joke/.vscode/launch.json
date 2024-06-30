@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Amusing Joke",
+            "program": "${workspaceFolder}/141a-amusing-joke.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
