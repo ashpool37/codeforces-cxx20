@@ -18,7 +18,7 @@ Author's Codeforces profile: [Ashpool](https://codeforces.com/profile/Ashpool)
         * Problems solved: 71
         * Problems not solved: 1
 
-Percentage of solved problems: .7368%
+Percentage of solved problems: 0.7368%
 
 ## Thanks
 

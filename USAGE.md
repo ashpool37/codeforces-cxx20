@@ -35,7 +35,6 @@ To debug the project, first build it using `make`. Then use Run -> Start Debuggi
 
 To update the statistics below ensure that these are installed in addition to the above prerequisites:
 
-* `bc`,
 * `jq`,
 * `curl`.
 

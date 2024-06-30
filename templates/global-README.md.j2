@@ -15,10 +15,10 @@ Author's Codeforces profile: [Ashpool](https://codeforces.com/profile/Ashpool)
 
 * Total problems in Codeforces problem set: {{ problems_total }}
     * Problems started: {{ problems_started }}
-        * Problems solved: {{ problems_solved }}
+        * Problems solved: {% set problems_solved = (problems_started | int) - (problems_unsolved | int) %}{{ problems_solved }}
         * Problems not solved: {{ problems_unsolved }}
 
-Percentage of solved problems: {{ solved_percent }}%
+Percentage of solved problems: {{ (problems_solved / (problems_total | int) * 100) | round(4) }}%
 
 ## Thanks
 
