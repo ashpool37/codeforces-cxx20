@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Games",
+            "program": "${workspaceFolder}/268a-games.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
