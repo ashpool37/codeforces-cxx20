@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Candies and Two Sisters",
+            "program": "${workspaceFolder}/1335a-candies-and-two-sisters.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
