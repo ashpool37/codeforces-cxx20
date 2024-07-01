@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Sum of Round Numbers",
+            "program": "${workspaceFolder}/1352a-sum-of-round-numbers.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
