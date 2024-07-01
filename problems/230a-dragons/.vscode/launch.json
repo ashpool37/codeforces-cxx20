@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Dragons",
+            "program": "${workspaceFolder}/230a-dragons.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
