@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug The New Year: Meeting Friends",
+            "program": "${workspaceFolder}/723a-the-new-year-meeting-friends.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
