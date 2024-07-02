@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug New Year and Hurry",
+            "program": "${workspaceFolder}/750a-new-year-and-hurry.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
