@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug I_love_%username%",
+            "program": "${workspaceFolder}/155a-i-love-username.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
