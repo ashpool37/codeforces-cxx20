@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug T-primes",
+            "program": "${workspaceFolder}/230b-t-primes.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
