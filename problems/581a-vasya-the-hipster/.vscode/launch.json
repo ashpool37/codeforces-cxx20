@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Vasya the Hipster",
+            "program": "${workspaceFolder}/581a-vasya-the-hipster.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
