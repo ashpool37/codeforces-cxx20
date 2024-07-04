@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Buy a Shovel",
+            "program": "${workspaceFolder}/732a-buy-a-shovel.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
