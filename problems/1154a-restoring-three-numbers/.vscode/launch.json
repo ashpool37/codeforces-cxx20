@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Restoring Three Numbers",
+            "program": "${workspaceFolder}/1154a-restoring-three-numbers.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
