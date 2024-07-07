@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Xenia and Ringroad",
+            "program": "${workspaceFolder}/339b-xenia-and-ringroad.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
