@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug YES or YES?",
+            "program": "${workspaceFolder}/1703a-yes-or-yes.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
