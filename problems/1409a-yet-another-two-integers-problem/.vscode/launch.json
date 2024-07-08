@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Yet Another Two Integers Problem",
+            "program": "${workspaceFolder}/1409a-yet-another-two-integers-problem.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
