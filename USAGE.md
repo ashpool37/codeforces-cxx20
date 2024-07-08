@@ -33,7 +33,7 @@ To debug the project, first build it using `make`. Then use Run -> Start Debuggi
 
 ## Updating README
 
-To update the statistics below ensure that these are installed in addition to the above prerequisites:
+To update the statistics in README.md ensure that these are installed in addition to the above prerequisites:
 
 * `jq`,
 * `curl`.
