@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Cut Ribbon",
+            "program": "${workspaceFolder}/189a-cut-ribbon.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
