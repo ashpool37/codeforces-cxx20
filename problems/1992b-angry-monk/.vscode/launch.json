@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Angry Monk",
+            "program": "${workspaceFolder}/1992b-angry-monk.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
