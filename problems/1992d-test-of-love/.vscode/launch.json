@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Test of Love",
+            "program": "${workspaceFolder}/1992d-test-of-love.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
