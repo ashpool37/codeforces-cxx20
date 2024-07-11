@@ -1,5 +1,4 @@
 #include <iostream>
-#include <unordered_map>
 #include <vector>
 
 enum SectionType {
@@ -11,17 +10,6 @@ enum SectionType {
 struct State {
     size_t position;
     unsigned swim_remaining;
-
-    bool operator==(State const& other) const {
-        return position == other.position and swim_remaining == other.swim_remaining;
-    }
-};
-
-template<>
-struct std::hash<State> {
-    std::size_t operator()(State const& s) const {
-        return std::hash<unsigned>()(s.position) ^ (std::hash<unsigned>()(s.swim_remaining) << 1);
-    }
 };
 
 class PathFinder {
