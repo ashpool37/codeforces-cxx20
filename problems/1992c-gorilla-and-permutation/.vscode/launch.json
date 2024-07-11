@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Gorilla and Permutation",
+            "program": "${workspaceFolder}/1992c-gorilla-and-permutation.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
