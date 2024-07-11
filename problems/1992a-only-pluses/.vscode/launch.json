@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Only Pluses",
+            "program": "${workspaceFolder}/1992a-only-pluses.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
