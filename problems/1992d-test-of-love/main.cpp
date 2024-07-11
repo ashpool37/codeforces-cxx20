@@ -27,17 +27,12 @@ struct std::hash<State> {
 class PathFinder {
     std::vector<SectionType> const river;
     unsigned const max_jump_length;
-    std::unordered_map<State, bool> cached_results;
 public:
     PathFinder(std::vector<SectionType>&& river, unsigned max_jump_length) 
         : river(river), max_jump_length(max_jump_length)
     {};
 
     bool find_path(State state) {
-        auto cached_result_it = cached_results.find(state);
-        if(cached_result_it != cached_results.end())
-            return cached_result_it->second;
-
         if(state.position >= river.size() - 1) return true;
         
         SectionType section = river.at(state.position);
@@ -50,19 +45,28 @@ public:
                      and find_path({.position = state.position + 1,
                                     .swim_remaining = state.swim_remaining - 1});
         else {
-            for(unsigned jump_length = max_jump_length; jump_length >= 1; jump_length--) {
-                if(find_path({.position = state.position + jump_length,
-                              .swim_remaining = state.swim_remaining})) {
-                    result = true;
-                    break;
+            unsigned allowed_jump_length = std::min(max_jump_length, 
+                                                    static_cast<unsigned>(river.size() - state.position - 1));
+            for(unsigned jump_length = allowed_jump_length; jump_length >= 1; jump_length--) {
+                if(river.at(state.position + jump_length) == LOG_OR_GROUND) {
+                    result = find_path({.position = state.position + jump_length,
+                                        .swim_remaining = state.swim_remaining});
+                    if(result) break;
+                }
+            }
+            if(not result) {
+                for(unsigned jump_length = allowed_jump_length; jump_length >= 1; jump_length--) {
+                    if(river.at(state.position + jump_length) == WATER) {
+                        result = find_path({.position = state.position + jump_length,
+                                            .swim_remaining = state.swim_remaining});
+                        if(result) break;
+                    }
                 }
             }
         }
-        cached_results.insert({state, result});
         return result;
     }
 };
-
 
 int main() {
     unsigned test_count;
