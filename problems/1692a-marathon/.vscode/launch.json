@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Marathon",
+            "program": "${workspaceFolder}/1692a-marathon.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
