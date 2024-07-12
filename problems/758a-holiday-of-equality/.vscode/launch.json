@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Holiday Of Equality",
+            "program": "${workspaceFolder}/758a-holiday-of-equality.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
