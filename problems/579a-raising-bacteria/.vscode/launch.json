@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Raising Bacteria",
+            "program": "${workspaceFolder}/579a-raising-bacteria.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
