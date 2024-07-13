@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Plus or Minus",
+            "program": "${workspaceFolder}/1807a-plus-or-minus.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
