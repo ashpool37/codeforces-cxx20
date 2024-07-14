@@ -1,5 +1,5 @@
-// Problem: {{ contest_number }}{{ problem_letter_upper }}. {{ problem_title }}
-// Problem statement: https://codeforces.com/problemset/problem/{{ contest_number }}/{{ problem_letter_upper }}?locale=en
+// Problem: 432A. Choosing Teams
+// Problem statement: https://codeforces.com/problemset/problem/432/A?locale=en
 // Solution author: Artem Zhurikhin (https://codeforces.com/profile/Ashpool)
 // Solution license: the Unlicense (Public Domain)
 // More solutions: https://github.com/ashpool37/codeforces-cxx20
@@ -69,9 +69,17 @@ auto get_arr() {
 
 /* #endregion */
 
+size_t const team_size = 3u;
+
 int main() {
-    auto test_count = get<unsigned>();
-    while(test_count--) {
-        
-    }
+    auto student_count = get<unsigned>();
+    auto target_participation_count = get<unsigned>();
+    auto student_participation_counts = get_vec<unsigned>(student_count);
+
+    auto is_student_eligible = [target_participation_count](auto student_participation_count) {
+        return 5 - student_participation_count >= target_participation_count;
+    };
+
+    size_t eligible_student_count = std::ranges::count_if(student_participation_counts, is_student_eligible);
+    std::cout << eligible_student_count / team_size << std::endl;
 }
