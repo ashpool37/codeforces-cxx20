@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Make Majority",
+            "program": "${workspaceFolder}/1988b-make-majority.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
