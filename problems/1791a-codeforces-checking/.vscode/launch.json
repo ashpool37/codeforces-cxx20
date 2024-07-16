@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Codeforces Checking",
+            "program": "${workspaceFolder}/1791a-codeforces-checking.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
