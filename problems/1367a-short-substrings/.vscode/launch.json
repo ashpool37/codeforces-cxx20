@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Short Substrings",
+            "program": "${workspaceFolder}/1367a-short-substrings.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
