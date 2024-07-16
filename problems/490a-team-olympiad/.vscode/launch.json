@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Team Olympiad",
+            "program": "${workspaceFolder}/490a-team-olympiad.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
