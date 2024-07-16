@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Odd Divisor",
+            "program": "${workspaceFolder}/1475a-odd-divisor.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
