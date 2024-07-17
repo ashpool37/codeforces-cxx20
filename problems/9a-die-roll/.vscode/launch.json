@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Die Roll",
+            "program": "${workspaceFolder}/9a-die-roll.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
