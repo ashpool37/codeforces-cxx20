@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Mishka and Game",
+            "program": "${workspaceFolder}/703a-mishka-and-game.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
