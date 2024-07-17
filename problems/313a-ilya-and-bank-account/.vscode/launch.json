@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Ilya and Bank Account",
+            "program": "${workspaceFolder}/313a-ilya-and-bank-account.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
