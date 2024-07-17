@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug K-th Not Divisible by n",
+            "program": "${workspaceFolder}/1352c-k-th-not-divisible-by-n.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
