@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Football",
+            "program": "${workspaceFolder}/43a-football.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
