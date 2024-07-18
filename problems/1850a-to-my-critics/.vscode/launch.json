@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug To My Critics",
+            "program": "${workspaceFolder}/1850a-to-my-critics.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
