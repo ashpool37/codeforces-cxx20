@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Odd One Out",
+            "program": "${workspaceFolder}/1915a-odd-one-out.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
