@@ -1,5 +1,5 @@
-// Problem: {{ contest_number }}{{ problem_letter_upper }}. {{ problem_title }}
-// Problem statement: https://codeforces.com/problemset/problem/{{ contest_number }}/{{ problem_letter_upper }}?locale=en
+// Problem: 1374A. Required Remainder
+// Problem statement: https://codeforces.com/problemset/problem/1374/A?locale=en
 // Solution author: Artem Zhurikhin (https://codeforces.com/profile/Ashpool)
 // Solution license: the Unlicense (Public Domain)
 // More solutions: https://github.com/ashpool37/codeforces-cxx20
@@ -47,6 +47,12 @@ int main() {
     unsigned test_count;
     std::cin >> test_count;
     while(test_count--) {
-        
+        unsigned divisor, remainder, max_result;
+        std::cin >> divisor >> remainder >> max_result;
+
+        unsigned result = max_result / divisor * divisor + remainder;
+        if(result > max_result) result -= divisor;
+
+        std::cout << result << std::endl;
     }
 }
