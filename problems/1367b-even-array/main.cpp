@@ -1,5 +1,5 @@
-// Problem: {{ contest_number }}{{ problem_letter_upper }}. {{ problem_title }}
-// Problem statement: https://codeforces.com/problemset/problem/{{ contest_number }}/{{ problem_letter_upper }}?locale=en
+// Problem: 1367B. Even Array
+// Problem statement: https://codeforces.com/problemset/problem/1367/B?locale=en
 // Solution author: Artem Zhurikhin (https://codeforces.com/profile/Ashpool)
 // Solution license: the Unlicense (Public Domain)
 // More solutions: https://github.com/ashpool37/codeforces-cxx20
@@ -125,6 +125,21 @@ auto from_cin(std::size_t count) {
 int main() {
     unsigned test_count = from_cin();
     while(test_count--) {
-        
+        std::size_t array_size = from_cin();
+        std::vector<unsigned> numbers = from_cin(array_size);
+
+        unsigned even_count = 0;
+        unsigned odd_count = 0;
+        unsigned misplace_count = 0;
+        for(std::size_t i = 0; i < array_size; i++) {
+            if(numbers[i] % 2 == 0) even_count++;
+            else odd_count++;
+
+            if(i % 2 != numbers[i] % 2) misplace_count++;
+        }
+        bool is_array_valid = (array_size % 2 == 0 and even_count == odd_count)
+                              or (array_size % 2 == 1 and even_count == odd_count + 1);
+        if(not is_array_valid) std::cout << -1 << std::endl;
+        else std::cout << misplace_count / 2 << std::endl;
     }
 }

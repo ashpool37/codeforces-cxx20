@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Even Array",
+            "program": "${workspaceFolder}/1367b-even-array.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
