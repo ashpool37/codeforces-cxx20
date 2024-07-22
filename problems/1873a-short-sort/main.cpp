@@ -1,5 +1,5 @@
-// Problem: {{ contest_number }}{{ problem_letter_upper }}. {{ problem_title }}
-// Problem statement: https://codeforces.com/problemset/problem/{{ contest_number }}/{{ problem_letter_upper }}?locale=en
+// Problem: 1873A. Short Sort
+// Problem statement: https://codeforces.com/problemset/problem/1873/A?locale=en
 // Solution author: Artem Zhurikhin (https://codeforces.com/profile/Ashpool)
 // Solution license: the Unlicense (Public Domain)
 // More solutions: https://github.com/ashpool37/codeforces-cxx20
@@ -14,6 +14,7 @@
 #include <list>
 #include <array>
 #include <limits>
+#include <set>
 
 /* #region templates */
 
@@ -137,9 +138,18 @@ void cin_skip_line() {
 
 /* #endregion */
 
+std::set<std::string> const valid_permutations = {
+    "abc",
+    "bac",
+    "acb",
+    "cba",
+};
+
 int main() {
     unsigned test_count = from_cin();
+    cin_skip_line();
     while(test_count--) {
-        
+        std::string permutation = from_cin();
+        std::cout << (valid_permutations.contains(permutation) ? "YES" : "NO") << std::endl;
     }
 }

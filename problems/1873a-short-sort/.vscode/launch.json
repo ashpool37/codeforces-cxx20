@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Short Sort",
+            "program": "${workspaceFolder}/1873a-short-sort.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
