@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Diagonals",
+            "program": "${workspaceFolder}/1995a-diagonals.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
