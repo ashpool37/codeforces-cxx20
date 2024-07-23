@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug New Year Transportation",
+            "program": "${workspaceFolder}/500a-new-year-transportation.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
