@@ -14,6 +14,8 @@
 #include <list>
 #include <array>
 #include <limits>
+#include <iterator>
+#include <unordered_set>
 
 /* #region templates */
 
@@ -133,6 +135,28 @@ void istream_skip_line(std::istream& input_stream) {
 
 void cin_skip_line() {
     istream_skip_line(std::cin);
+}
+
+
+template<std::integral T, std::output_iterator<T> OutputIt>
+void generate_multiples(T limit, T base, OutputIt it) {
+    T multiple;
+    for(T i = 2; (multiple = base * i) <= limit; i++) {
+        *it = multiple;
+        it++;
+    }
+}
+
+template<std::integral T, std::output_iterator<T> OutputIt>
+void generate_primes(T limit, OutputIt it) {
+    std::unordered_set<T> composite;
+    for(T i = 2; i <= limit; i++) {
+        if(not composite.contains(i)) {
+            *it = i;
+            it++;
+            if(i * i <= limit) generate_multiples(limit, i, std::inserter(composite, composite.begin()));
+        }
+    }
 }
 
 /* #endregion */

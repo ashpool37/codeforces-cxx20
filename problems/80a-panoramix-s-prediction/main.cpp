@@ -139,19 +139,19 @@ void cin_skip_line() {
 
 /* #endregion */
 
-template<std::output_iterator<umax> OutputIt>
-void generate_multiples(umax limit, umax base, OutputIt it) {
-    umax multiple;
-    for(umax i = 2; (multiple = base * i) <= limit; i++) {
+template<std::integral T, std::output_iterator<T> OutputIt>
+void generate_multiples(T limit, T base, OutputIt it) {
+    T multiple;
+    for(T i = 2; (multiple = base * i) <= limit; i++) {
         *it = multiple;
         it++;
     }
 }
 
-template<std::output_iterator<umax> OutputIt>
-void generate_primes(umax limit, OutputIt it) {
-    std::unordered_set<umax> composite;
-    for(umax i = 2; i <= limit; i++) {
+template<std::integral T, std::output_iterator<T> OutputIt>
+void generate_primes(T limit, OutputIt it) {
+    std::unordered_set<T> composite;
+    for(T i = 2; i <= limit; i++) {
         if(not composite.contains(i)) {
             *it = i;
             it++;
