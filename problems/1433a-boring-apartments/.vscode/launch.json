@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Boring Apartments",
+            "program": "${workspaceFolder}/1433a-boring-apartments.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
