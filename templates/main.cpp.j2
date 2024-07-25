@@ -4,6 +4,8 @@
 // Solution license: the Unlicense (Public Domain)
 // More solutions: https://github.com/ashpool37/codeforces-cxx20
 
+/* #region templates */
+
 #include <iostream>
 #include <charconv>
 #include <ranges>
@@ -16,8 +18,6 @@
 #include <limits>
 #include <iterator>
 #include <unordered_set>
-
-/* #region templates */
 
 using umax = std::uintmax_t;
 
@@ -36,9 +36,13 @@ char unsigned_to_digit(unsigned n) {
 }
 
 template<std::integral T>
-auto range(T start, T step, size_t count) {
+auto counted(T start, size_t count, T step = 1) {
     using namespace std::ranges::views;
     return iota(0u, count) | transform([=](size_t i){ return start + step * static_cast<T>(i); });
+}
+
+auto counted(size_t count) {
+    return counted(0ull, count, 1ull);
 }
 
 template<std::integral BaseT, std::integral ExponentT>
