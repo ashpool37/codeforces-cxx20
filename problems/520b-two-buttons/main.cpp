@@ -11,6 +11,7 @@
 #include <ranges>
 #include <type_traits>
 #include <cstdint>
+#include <utility>
 #include <vector>
 #include <algorithm>
 #include <list>
@@ -165,58 +166,29 @@ void generate_primes(T limit, OutputIt it) {
 /* #endregion */
 
 #include <queue>
-#include <set>
 
 template<typename T>
-concept Hashable = requires(T object1, T object2) {
-    { std::hash<T>{}(object1) };
-    { object1 == object2 };
-};
-
-std::size_t hash_combine() {
-    return 0;
-}
-
-template<Hashable T1, Hashable... Ts>
-std::size_t hash_combine(T1 const& a, Ts const&... args) {
-    std::size_t combined_hash = std::hash<T1>{}(a);
-    if constexpr (sizeof...(args) > 0) {
-        combined_hash += (hash_combine(args...) << 1);
-    }
-    return combined_hash;
-}
-
-struct State {
-    unsigned press_count;
-    unsigned value_displayed;
-
-    bool operator==(State const& other) const {
-        return press_count == other.press_count
-               and value_displayed == other.value_displayed;
-    }
-};
-
-template<>
-struct std::hash<State> {
-    std::size_t operator() (State const& state) const noexcept {
-        return hash_combine(state.press_count, state.value_displayed);
-    }
-};
-
-template<Hashable T>
 class BFS {
-    std::queue<T> states;
-    std::unordered_set<T> visited;
 public:
-    void enqueue_unless_visited(T const& state) {
-        if(not visited.contains(state)) {
+    struct State {
+        T value;
+        umax level;
+    };
+
+private:
+    std::queue<State> states;
+    std::unordered_set<T> visited;
+
+public:
+    void enqueue_unless_visited(State const& state) {
+        if(not visited.contains(state.value)) {
             states.push(state);
-            visited.insert(state);
+            visited.insert(state.value);
         }
     }
 
-    T dequeue() {
-        T result = states.front();
+    State dequeue() {
+        State result = states.front();
         states.pop();
         return result;
     }
@@ -230,26 +202,22 @@ int main() {
     unsigned const initial_value = from_cin();
     unsigned const target_value = from_cin();
 
-    BFS<State> bfs;
-    bfs.enqueue_unless_visited({.press_count = 0, .value_displayed = initial_value});
-    unsigned press_count_min = std::numeric_limits<unsigned>::max();
-    while(not bfs.done()) {
-        State state = bfs.dequeue();
-        if(state.value_displayed == target_value)
-            press_count_min = std::min(press_count_min, state.press_count);
-        else if (state.press_count < press_count_min) {
-            if(state.value_displayed > target_value)
-                bfs.enqueue_unless_visited({.press_count = state.press_count + (state.value_displayed - target_value),
-                                            .value_displayed = target_value});
+    auto do_bfs = [=]() -> std::optional<umax> {
+        BFS<unsigned> bfs;
+        bfs.enqueue_unless_visited({.value = initial_value, .level = 0});
+        while(not bfs.done()) {
+            auto state = bfs.dequeue();
+            if(state.value == target_value) return state.level;
+            if(state.value > target_value)
+                bfs.enqueue_unless_visited({.value = state.value - 1u, .level = state.level + 1});
             else {
-                if(state.value_displayed > 1)
-                    bfs.enqueue_unless_visited({.press_count = state.press_count + 1u,
-                                                .value_displayed = state.value_displayed - 1u});
-                bfs.enqueue_unless_visited({.press_count = state.press_count + 1u,
-                                            .value_displayed = state.value_displayed * 2u});
+                if(state.value > 1) 
+                    bfs.enqueue_unless_visited({.value = state.value - 1u, .level = state.level + 1});
+                bfs.enqueue_unless_visited({.value = state.value * 2u, .level = state.level + 1});
             }
         }
-    }
+        return std::nullopt;
+    };
 
-    std::cout << press_count_min << std::endl;
+    std::cout << do_bfs().value() << std::endl;
 }
