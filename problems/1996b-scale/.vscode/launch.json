@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Scale",
+            "program": "${workspaceFolder}/1996b-scale.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
