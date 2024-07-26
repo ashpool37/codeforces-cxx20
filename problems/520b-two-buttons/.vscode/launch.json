@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Two Buttons",
+            "program": "${workspaceFolder}/520b-two-buttons.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
