@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Plus One on the Subset",
+            "program": "${workspaceFolder}/1624a-plus-one-on-the-subset.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
