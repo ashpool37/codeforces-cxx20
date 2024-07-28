@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Do Not Be Distracted!",
+            "program": "${workspaceFolder}/1520a-do-not-be-distracted.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
