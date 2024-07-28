@@ -164,8 +164,6 @@ void generate_primes(T limit, OutputIt it) {
 
 /* #endregion */
 
-#include <utility>
-
 int main() {
     unsigned test_count = from_cin();
     while(test_count--) {
