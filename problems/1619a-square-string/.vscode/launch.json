@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Square String?",
+            "program": "${workspaceFolder}/1619a-square-string.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
