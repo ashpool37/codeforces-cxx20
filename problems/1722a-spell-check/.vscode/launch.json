@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Spell Check",
+            "program": "${workspaceFolder}/1722a-spell-check.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
