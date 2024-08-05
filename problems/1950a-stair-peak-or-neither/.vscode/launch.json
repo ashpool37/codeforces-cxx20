@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Stair, Peak, or Neither?",
+            "program": "${workspaceFolder}/1950a-stair-peak-or-neither.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
