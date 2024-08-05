@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Multiply by 2, divide by 6",
+            "program": "${workspaceFolder}/1374b-multiply-by-2-divide-by-6.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
