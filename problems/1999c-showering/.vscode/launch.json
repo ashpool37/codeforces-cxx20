@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Showering",
+            "program": "${workspaceFolder}/1999c-showering.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
