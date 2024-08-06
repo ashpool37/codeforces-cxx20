@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Minutes Before the New Year",
+            "program": "${workspaceFolder}/1283a-minutes-before-the-new-year.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
