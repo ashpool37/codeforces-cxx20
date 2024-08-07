@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Slavic's Exam",
+            "program": "${workspaceFolder}/1999d-slavic-s-exam.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
