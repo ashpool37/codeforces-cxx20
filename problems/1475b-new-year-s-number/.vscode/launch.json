@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug New Year's Number",
+            "program": "${workspaceFolder}/1475b-new-year-s-number.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
