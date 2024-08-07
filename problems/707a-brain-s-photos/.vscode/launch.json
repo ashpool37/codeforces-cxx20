@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Brain's Photos",
+            "program": "${workspaceFolder}/707a-brain-s-photos.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
