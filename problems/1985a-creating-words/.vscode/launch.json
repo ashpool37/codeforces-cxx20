@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Creating Words",
+            "program": "${workspaceFolder}/1985a-creating-words.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
