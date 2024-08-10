@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug ICPC Balloons",
+            "program": "${workspaceFolder}/1703b-icpc-balloons.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
