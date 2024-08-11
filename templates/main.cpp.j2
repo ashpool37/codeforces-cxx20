@@ -75,14 +75,8 @@ class FromIstreamHelper {
 
     friend auto from_istream(std::istream& input_stream);
     friend auto from_istream(std::istream& input_stream, std::size_t count);
+
 public:
-
-    operator std::string() && {
-        std::string result;
-        std::getline(input_stream, result);
-        return result;
-    }
-
     template<ReadableFromStream T>
     operator T() && {
         T result;
@@ -133,6 +127,16 @@ auto from_cin(std::size_t count) {
     return from_istream(std::cin, count);
 }
 
+std::string line_from_istream(std::istream& input_stream) {
+    std::string result;
+    std::getline(input_stream, result);
+    return result;
+}
+
+std::string line_from_cin() {
+    return line_from_istream(std::cin);
+}
+
 void istream_skip_line(std::istream& input_stream) {
     input_stream.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
@@ -166,7 +170,7 @@ void generate_primes(T limit, OutputIt it) {
 
 int main() {
     unsigned test_count = from_cin();
-    while(test_count--) {
+    for(auto _ : counted(test_count)) {
         
     }
 }
