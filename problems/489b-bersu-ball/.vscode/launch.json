@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug BerSU Ball",
+            "program": "${workspaceFolder}/489b-bersu-ball.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
