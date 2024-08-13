@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Primary Task",
+            "program": "${workspaceFolder}/2000a-primary-task.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
