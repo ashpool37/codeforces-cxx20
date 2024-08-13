@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Numeric String Template",
+            "program": "${workspaceFolder}/2000c-numeric-string-template.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
