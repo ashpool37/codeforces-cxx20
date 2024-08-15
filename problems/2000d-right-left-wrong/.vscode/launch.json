@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Right Left Wrong",
+            "program": "${workspaceFolder}/2000d-right-left-wrong.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
