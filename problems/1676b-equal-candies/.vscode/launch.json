@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Equal Candies",
+            "program": "${workspaceFolder}/1676b-equal-candies.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
