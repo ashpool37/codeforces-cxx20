@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Increasing",
+            "program": "${workspaceFolder}/1742b-increasing.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
