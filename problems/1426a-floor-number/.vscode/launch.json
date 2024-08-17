@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Floor Number",
+            "program": "${workspaceFolder}/1426a-floor-number.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
