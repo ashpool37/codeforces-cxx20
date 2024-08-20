@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Collecting Coins",
+            "program": "${workspaceFolder}/1294a-collecting-coins.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
