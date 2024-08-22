@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Vlad and the Best of Five",
+            "program": "${workspaceFolder}/1926a-vlad-and-the-best-of-five.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
