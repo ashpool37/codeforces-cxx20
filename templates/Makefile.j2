@@ -1,6 +1,6 @@
 .POSIX:
 CXX = clang++
-CXXFLAGS = -g -std=c++20 -Wall -Wextra
+CXXFLAGS = -g -std=c++23 -Wall -Wextra
 
 SRCS =	main.cpp
 OBJS = $(SRCS:.cpp=.o)
