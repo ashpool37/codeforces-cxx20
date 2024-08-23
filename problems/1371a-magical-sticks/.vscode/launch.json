@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Magical Sticks",
+            "program": "${workspaceFolder}/1371a-magical-sticks.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
