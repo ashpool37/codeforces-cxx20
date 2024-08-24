@@ -259,11 +259,22 @@ int main() {
             if(shrink_right() != ShrinkResult::OK) return std::nullopt;
             return result;
         };
-        auto const sum_over_stretch = [&points](Stretch const& stretch) {
-            umax result = 0;
-            for(std::size_t i = stretch.left_bound; i <= stretch.right_bound; i++)
-                result += points[i];
+
+        std::vector<umax> const prefix_sums = [&points]() {
+            std::vector<umax> result;
+            result.reserve(points.size());
+            umax running_sum = 0;
+            for(std::size_t i : counted(points.size())) {
+                running_sum += points[i];
+                result[i] = running_sum;
+            }
             return result;
+        }();
+        auto const sum_over_stretch = [&prefix_sums](Stretch const& stretch) {
+            return prefix_sums[stretch.right_bound]
+                   - (stretch.left_bound == 0uz
+                        ? 0ul
+                        : prefix_sums[stretch.left_bound - 1uz]);
         };
 
         umax point_count = 0;

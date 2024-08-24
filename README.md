@@ -19,10 +19,10 @@ Author's Codeforces profile: [Ashpool](https://codeforces.com/profile/Ashpool)
 
 * Total problems in Codeforces problem set: 9752
     * Problems started: 183
-        * Problems solved: 181
-        * Problems not solved: 2
+        * Problems solved: 182
+        * Problems not solved: 1
 
-Percentage of solved problems: 1.856%
+Percentage of solved problems: 1.8663%
 
 ## Thanks
 
