@@ -1,8 +1,12 @@
-# Codeforces Solutions in C++20
+# Codeforces Solutions in C++20/23
 
 An ongoing quest to solve all Codeforces problems [ordered by popularity](https://codeforces.com/problemset?order=BY_SOLVED_DESC&locale=en) and learn some modern C++ in the process.
 
 All solutions are original and released into the Public Domain. Please see LICENSE for details.
+
+C++ versions used:
+* Before 23 Aug 2024: **C++20**
+* Since 23 Aug 2024: **C++23**
 
 Some caveats.
 * The C++ version might be upgraded in the future following adoption by Codeforces.
