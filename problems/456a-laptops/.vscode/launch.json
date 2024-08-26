@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Laptops",
+            "program": "${workspaceFolder}/456a-laptops.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
