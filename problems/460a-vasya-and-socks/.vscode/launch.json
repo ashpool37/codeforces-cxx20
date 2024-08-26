@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Vasya and Socks",
+            "program": "${workspaceFolder}/460a-vasya-and-socks.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
