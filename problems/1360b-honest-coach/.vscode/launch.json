@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Honest Coach",
+            "program": "${workspaceFolder}/1360b-honest-coach.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
