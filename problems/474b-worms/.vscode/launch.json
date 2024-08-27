@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Worms",
+            "program": "${workspaceFolder}/474b-worms.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
