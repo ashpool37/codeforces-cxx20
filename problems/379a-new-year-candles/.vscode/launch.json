@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug New Year Candles",
+            "program": "${workspaceFolder}/379a-new-year-candles.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
