@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Move Brackets",
+            "program": "${workspaceFolder}/1374c-move-brackets.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

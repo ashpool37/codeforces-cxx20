@@ -1,5 +1,5 @@
-// Problem: {{ contest_number }}{{ problem_letter_upper }}. {{ problem_title }}
-// Problem statement: https://codeforces.com/problemset/problem/{{ contest_number }}/{{ problem_letter_upper }}?locale=en
+// Problem: 1374C. Move Brackets
+// Problem statement: https://codeforces.com/problemset/problem/1374/C?locale=en
 // Solution author: Artem Zhurikhin (https://codeforces.com/profile/Ashpool)
 // Solution license: the Unlicense (Public Domain)
 // More solutions: https://github.com/ashpool37/codeforces-cxx20
@@ -168,9 +168,38 @@ void generate_primes(T limit, OutputIt it) {
 
 /* #endregion */
 
+enum class Bracket : int {
+    OPEN = 1,
+    CLOSE = -1,
+};
+
+std::istream& operator>>(std::istream& is, Bracket& bracket) {
+    char const bracket_ch = from_istream(is);
+    switch(bracket_ch) {
+        case '(': bracket = Bracket::OPEN; break;
+        case ')': bracket = Bracket::CLOSE; break;
+    }
+    return is;
+}
+
 int main() {
     unsigned const test_count = from_cin();
     for(auto const _ : counted(test_count)) {
-        
+        unsigned const bracket_count = from_cin();
+        cin_skip_line();
+
+        int bracket_balance = 0;
+        unsigned move_count = 0u;
+        for(auto const _ : counted(bracket_count)) {
+            Bracket const bracket = from_cin();
+            bracket_balance += static_cast<int>(bracket);
+            if(bracket_balance < 0) {
+                move_count++;
+                bracket_balance = 0;
+            }
+        }
+        cin_skip_line();
+
+        std::cout << move_count << std::endl;
     }
 }
