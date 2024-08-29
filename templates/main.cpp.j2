@@ -19,7 +19,8 @@
 #include <iterator>
 #include <unordered_set>
 
-using umax = std::uintmax_t;
+using ll = long long;
+using ull = unsigned long long;
 
 unsigned digit_to_unsigned(char c) {
     char cs[2] = "\0";
@@ -36,12 +37,12 @@ char unsigned_to_digit(unsigned n) {
 }
 
 template<std::integral T>
-auto counted(T start, size_t count, T step = 1) {
+auto counted(T start, std::size_t count, T step = 1) {
     using namespace std::ranges::views;
-    return iota(0u, count) | transform([=](size_t i){ return start + step * static_cast<T>(i); });
+    return iota(0u, count) | transform([=](std::size_t i){ return start + step * static_cast<T>(i); });
 }
 
-auto counted(size_t count) {
+auto counted(std::size_t count) {
     return counted(0ull, count, 1ull);
 }
 
