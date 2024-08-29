@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Colourblindness",
+            "program": "${workspaceFolder}/1722b-colourblindness.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
