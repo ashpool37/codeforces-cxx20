@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Blank Space",
+            "program": "${workspaceFolder}/1829b-blank-space.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
