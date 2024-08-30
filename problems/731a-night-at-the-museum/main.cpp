@@ -177,10 +177,10 @@ unsigned non_negative_modulo(int dividend, unsigned divisor) {
 
 unsigned embosser_distance(char ch_from, char ch_to) {
     unsigned const alphabet_size = 26u;
-    int const forward_distance = non_negative_modulo(static_cast<int>(ch_to - ch_from),
-                                                     static_cast<int>(alphabet_size));
-    int const backward_distance = non_negative_modulo(static_cast<int>(ch_from - ch_to),
-                                                      static_cast<int>(alphabet_size));
+    unsigned const forward_distance =
+        non_negative_modulo(static_cast<int>(ch_to - ch_from), alphabet_size);
+    unsigned const backward_distance =
+        non_negative_modulo(static_cast<int>(ch_from - ch_to), alphabet_size);
     return std::min(forward_distance, backward_distance);
 }
 
