@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Olesya and Rodion",
+            "program": "${workspaceFolder}/584a-olesya-and-rodion.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
