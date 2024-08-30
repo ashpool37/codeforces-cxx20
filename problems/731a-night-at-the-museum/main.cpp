@@ -1,5 +1,5 @@
-// Problem: {{ contest_number }}{{ problem_letter_upper }}. {{ problem_title }}
-// Problem statement: https://codeforces.com/problemset/problem/{{ contest_number }}/{{ problem_letter_upper }}?locale=en
+// Problem: 731A. Night at the Museum
+// Problem statement: https://codeforces.com/problemset/problem/731/A?locale=en
 // Solution author: Artem Zhurikhin (https://codeforces.com/profile/Ashpool)
 // Solution license: the Unlicense (Public Domain)
 // More solutions: https://github.com/ashpool37/codeforces-cxx20
@@ -168,9 +168,31 @@ void generate_primes(T limit, OutputIt it) {
 
 /* #endregion */
 
+unsigned non_negative_modulo(int dividend, unsigned divisor) {
+    long const signed_divisor = static_cast<long>(divisor);
+    long const raw_modulo = static_cast<long>(dividend) % signed_divisor;
+    if(raw_modulo < 0) return static_cast<unsigned>(raw_modulo + signed_divisor);
+    else return static_cast<unsigned>(raw_modulo);
+}
+
+unsigned embosser_distance(char ch_from, char ch_to) {
+    unsigned const alphabet_size = 26u;
+    int const forward_distance = non_negative_modulo(static_cast<int>(ch_to - ch_from),
+                                                     static_cast<int>(alphabet_size));
+    int const backward_distance = non_negative_modulo(static_cast<int>(ch_from - ch_to),
+                                                      static_cast<int>(alphabet_size));
+    return std::min(forward_distance, backward_distance);
+}
+
 int main() {
-    unsigned const test_count = from_cin();
-    for(auto const _ : counted(test_count)) {
-        
+    std::string const exhibit_name = line_from_cin();
+
+    char embosser_selection = 'a';
+    unsigned rotation_count = 0;
+    for(char ch : exhibit_name) {
+        rotation_count += embosser_distance(embosser_selection, ch);
+        embosser_selection = ch;
     }
+
+    std::cout << rotation_count << std::endl;
 }

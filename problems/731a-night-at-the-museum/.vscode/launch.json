@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Night at the Museum",
+            "program": "${workspaceFolder}/731a-night-at-the-museum.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
