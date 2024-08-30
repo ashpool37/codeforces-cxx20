@@ -1,5 +1,5 @@
-// Problem: {{ contest_number }}{{ problem_letter_upper }}. {{ problem_title }}
-// Problem statement: https://codeforces.com/problemset/problem/{{ contest_number }}/{{ problem_letter_upper }}?locale=en
+// Problem: 474A. Keyboard
+// Problem statement: https://codeforces.com/problemset/problem/474/A?locale=en
 // Solution author: Artem Zhurikhin (https://codeforces.com/profile/Ashpool)
 // Solution license: the Unlicense (Public Domain)
 // More solutions: https://github.com/ashpool37/codeforces-cxx20
@@ -181,9 +181,62 @@ void generate_primes(T limit, OutputIt it) {
 
 /* #endregion */
 
-int main() {
-    unsigned const test_count = from_cin();
-    for(auto const _ : counted(test_count)) {
-        
+#include <unordered_map>
+#include <map>
+
+enum class ShiftDirection {
+    LEFT,
+    RIGHT,
+};
+
+std::istream& operator>>(std::istream& input_stream, ShiftDirection& shift_direction) {
+    istream_skip_ws(input_stream);
+    switch(input_stream.peek()) {
+        case 'L':
+            shift_direction = ShiftDirection::LEFT;
+            input_stream.get();
+            break;
+        case 'R':
+            shift_direction = ShiftDirection::RIGHT;
+            input_stream.get();
+            break;
+        default:
+            input_stream.setstate(std::ios::failbit);
+            break;
     }
+    return input_stream;
+}
+
+std::vector<std::string> const keyboard_layout = {
+    "qwertyuiop"
+    "asdfghjkl;"
+    "zxcvbnm,./"
+};
+
+std::map<ShiftDirection, std::unordered_map<char, char>> lookup_table = []() {
+    std::map<ShiftDirection, std::unordered_map<char, char>> result = {
+        {ShiftDirection::LEFT, {}},
+        {ShiftDirection::RIGHT, {}},
+    };
+    for(auto const& row : keyboard_layout) {
+        if(row.size() > 1uz) {
+            result[ShiftDirection::LEFT][row[0uz]] = row[1uz];
+            for(std::size_t i = 1; i < row.size() - 1uz; i++) {
+                result[ShiftDirection::LEFT][row[i]] = row[i + 1uz];
+                result[ShiftDirection::RIGHT][row[i]] = row[i - 1uz];
+            }
+            result[ShiftDirection::RIGHT][row[row.size() - 1uz]] = row[row.size() - 2uz];
+        }
+    }
+    return result;
+}();
+
+int main() {
+    ShiftDirection shift_direction = from_cin();
+    cin_skip_ws();
+    auto const lookup = [shift_direction](char ch) { return lookup_table.at(shift_direction).at(ch); };
+    std::string const encoded_message = line_from_cin();
+    std::string const decoded_message = std::views::transform(encoded_message, lookup)
+                                        | std::ranges::to<std::string>();
+    std::cout << decoded_message << std::endl;
 }
