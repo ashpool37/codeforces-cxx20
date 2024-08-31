@@ -17,12 +17,12 @@ Author's Codeforces profile: [Ashpool](https://codeforces.com/profile/Ashpool)
 
 ## Statistics
 
-* Total problems in Codeforces problem set: 9764
-    * Problems started: 196
-        * Problems solved: 195
+* Total problems in Codeforces problem set: 9773
+    * Problems started: 197
+        * Problems solved: 196
         * Problems not solved: 1
 
-Percentage of solved problems: 1.9971%
+Percentage of solved problems: 2.0055%
 
 ## Thanks
 

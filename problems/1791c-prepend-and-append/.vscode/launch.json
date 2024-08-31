@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Prepend and Append",
+            "program": "${workspaceFolder}/1791c-prepend-and-append.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
