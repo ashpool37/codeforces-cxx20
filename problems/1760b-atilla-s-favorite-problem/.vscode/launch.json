@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Atilla's Favorite Problem",
+            "program": "${workspaceFolder}/1760b-atilla-s-favorite-problem.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
