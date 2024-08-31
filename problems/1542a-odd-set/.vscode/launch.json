@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Odd Set",
+            "program": "${workspaceFolder}/1542a-odd-set.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
