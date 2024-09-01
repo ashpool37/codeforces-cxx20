@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Longest Good Array",
+            "program": "${workspaceFolder}/2008c-longest-good-array.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
