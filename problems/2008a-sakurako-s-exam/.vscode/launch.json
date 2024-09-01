@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Sakurako's Exam",
+            "program": "${workspaceFolder}/2008a-sakurako-s-exam.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
