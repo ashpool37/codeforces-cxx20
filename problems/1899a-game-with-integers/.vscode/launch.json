@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Game with Integers",
+            "program": "${workspaceFolder}/1899a-game-with-integers.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
