@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Square or Not",
+            "program": "${workspaceFolder}/2008b-square-or-not.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
