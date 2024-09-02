@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Ordinary Numbers",
+            "program": "${workspaceFolder}/1520b-ordinary-numbers.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
