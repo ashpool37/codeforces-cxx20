@@ -221,11 +221,18 @@ int main() {
     for(auto const _ : counted(test_count)) {
         unsigned const row_count = from_cin();
         cin_skip_line();
-        for(unsigned i = 0; i < row_count - 1u; i++) {
-            std::string const row = line_from_cin();
-            std::cout << hit.at(row) << " ";
+        std::vector<unsigned> const hits = [row_count]() {
+            std::vector<unsigned> result;
+            result.reserve(row_count);
+            for(auto const _ : counted(row_count)) {
+                std::string const row = line_from_cin();
+                result.push_back(hit.at(row));
+            }
+            return result;
+        }();
+        for(std::size_t i = row_count - 1u; i > 0uz; i--) {
+            std::cout << hits[i] << " ";
         }
-        std::string const row = line_from_cin();
-        std::cout << hit.at(row) << std::endl;
+        std::cout << hits[0uz] << std::endl;
     }
 }
