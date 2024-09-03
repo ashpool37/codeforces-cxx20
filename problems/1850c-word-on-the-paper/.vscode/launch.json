@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Word on the Paper",
+            "program": "${workspaceFolder}/1850c-word-on-the-paper.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
