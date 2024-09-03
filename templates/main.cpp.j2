@@ -167,6 +167,14 @@ void generate_multiples(T limit, T base, OutputIt it) {
     }
 }
 
+template<std::integral T>
+std::vector<T> multiples_to_vector(T limit, T base, bool include_base = true) {
+    std::vector<T> result;
+    if(include_base) result.push_back(base);
+    generate_multiples(limit, base, std::back_inserter(result));
+    return result;
+}
+
 template<std::integral T, std::output_iterator<T> OutputIt>
 void generate_primes(T limit, OutputIt it) {
     std::unordered_set<T> composite;
@@ -177,6 +185,24 @@ void generate_primes(T limit, OutputIt it) {
             if(i * i <= limit) generate_multiples(limit, i, std::inserter(composite, composite.begin()));
         }
     }
+}
+
+template<std::integral T>
+std::vector<T> primes_to_vector(T limit) {
+    std::vector<T> result;
+    generate_primes(limit, std::back_inserter(result));
+    return result;
+}
+
+template <typename T>
+concept Summable = requires(T lhs, T rhs) {
+    { lhs + rhs };
+};
+
+template<std::ranges::range R>
+requires Summable<std::ranges::range_value_t<R>>
+auto sum(R const& range) {
+    return std::ranges::fold_left(range, 0, std::plus());
 }
 
 /* #endregion */
