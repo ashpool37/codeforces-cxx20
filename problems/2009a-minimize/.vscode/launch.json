@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Minimize!",
+            "program": "${workspaceFolder}/2009a-minimize.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
