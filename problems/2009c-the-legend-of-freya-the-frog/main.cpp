@@ -6,6 +6,7 @@
 
 /* #region templates */
 
+#include <cstddef>
 #include <iostream>
 #include <charconv>
 #include <ranges>
@@ -207,24 +208,71 @@ auto sum(R const& range) {
 
 /* #endregion */
 
+#include <utility>
+
+enum class Facing : bool {
+    X,
+    Y,
+};
+
+void turn(Facing& facing) {
+    if(facing == Facing::X) facing = Facing::Y;
+    else facing = Facing::X;
+}
+
+unsigned ceil_div(unsigned lhs, unsigned rhs) {
+    if(rhs == 0u) throw std::runtime_error("Division by zero");
+    return (lhs + rhs - 1u) / rhs;
+}
+
 int main() {
     unsigned const test_count = from_cin();
     for(auto const _ : counted(test_count)) {
-        auto const [dest_x, dest_y, swapped_directions] = [](){
+        auto const [dest_x, dest_y, facing_start] = [](){
             unsigned dest_x_ = from_cin();
             unsigned dest_y_ = from_cin();
-            if(dest_x_ > dest_y_)
-                return std::make_tuple(dest_y_, dest_x_, true);
-            else return std::make_tuple(dest_x_, dest_y_, false);
+            Facing facing_start_ = Facing::X;
+            if(dest_x_ > dest_y_) {
+                std::swap(dest_x_, dest_y_);
+                facing_start_ = Facing::Y;
+            }
+            return std::make_tuple(dest_x_, dest_y_, facing_start_);
         }();
         unsigned const max_jump = from_cin();
+
         unsigned const full_square_count = dest_x / max_jump;
-        unsigned const vertical_distance_left = dest_y - full_square_count * max_jump;
-        unsigned const vertical_max_jump_count = vertical_distance_left / max_jump;
-        unsigned const last_square = max_jump * vertical_max_jump_count == vertical_distance_left ? 0u : 1u;
         unsigned const total_moves = [=]() {
-            unsigned result = 2u * (full_square_count + vertical_max_jump_count + last_square);
-            if(swapped_directions) result -= 1u;
+            unsigned result = full_square_count * 2u;
+            unsigned x = full_square_count * max_jump;
+            unsigned y = x;
+            Facing facing = facing_start;
+            auto const dx = [&x = std::as_const(x), dest_x]() { return dest_x - x; };
+            auto const dy = [&y = std::as_const(y), dest_y]() { return dest_y - y; };
+
+            // 0 <= dx < max_jump
+            // 0 <= dx <= dy
+
+            if(dx() != 0u) {
+                if(facing == Facing::X) {
+                    x = dest_x;
+                    turn(facing);
+                    result += 1u;
+                }
+                else {
+                    y += std::min(dy(), max_jump);
+                    x = dest_x;
+                    result += 2u;
+                }
+            }
+
+            // dx = 0
+
+            if(dy() == 0u) return result;
+
+            unsigned const y_jumps_remaining = ceil_div(dy(), max_jump);
+            if(facing == Facing::X) result += y_jumps_remaining * 2u;
+            else result += y_jumps_remaining * 2u - 1u;
+
             return result;
         }();
 
