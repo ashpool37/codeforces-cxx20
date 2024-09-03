@@ -167,6 +167,14 @@ void generate_multiples(T limit, T base, OutputIt it) {
     }
 }
 
+template<std::integral T>
+std::vector<T> multiples_to_vector(T limit, T base, bool include_base = true) {
+    std::vector<T> result;
+    if(include_base) result.push_back(base);
+    generate_multiples(limit, base, std::back_inserter(result));
+    return result;
+}
+
 template<std::integral T, std::output_iterator<T> OutputIt>
 void generate_primes(T limit, OutputIt it) {
     std::unordered_set<T> composite;
@@ -179,28 +187,38 @@ void generate_primes(T limit, OutputIt it) {
     }
 }
 
+template<std::integral T>
+std::vector<T> primes_to_vector(T limit) {
+    std::vector<T> result;
+    generate_primes(limit, std::back_inserter(result));
+    return result;
+}
+
+template <typename T>
+concept Summable = requires(T lhs, T rhs) {
+    { lhs + rhs };
+};
+
+template<std::ranges::range R>
+requires Summable<std::ranges::range_value_t<R>>
+auto sum(R const& range) {
+    return std::ranges::fold_left(range, 0, std::plus());
+}
+
 /* #endregion */
 
 unsigned const global_upper_bound = 100u;
 
 int main() {
     unsigned const test_count = from_cin();
-    std::vector<unsigned> const primes = []() {
-        std::vector<unsigned> result;
-        generate_primes(global_upper_bound, std::back_inserter(result));
-        return result;
-    }();
+    std::vector<unsigned> const primes = primes_to_vector(global_upper_bound);
     for(auto const _ : counted(test_count)) {
         unsigned const upper_bound = from_cin();
         unsigned multiples_sum_max = 0u;
         std::optional<unsigned> maximizing_prime;
         for(auto p = primes.begin(); p != primes.end() and *p <= upper_bound; p++) {
-            std::vector<unsigned> const multiples = [&p, upper_bound]() {
-                std::vector<unsigned> result = {*p};
-                generate_multiples(upper_bound, *p, std::back_inserter(result));
-                return result;
-            }();
-            unsigned const multiples_sum = std::ranges::fold_left(multiples, 0u, std::plus());
+            std::vector<unsigned> const multiples = multiples_to_vector(upper_bound, *p);
+            unsigned const multiples_sum = sum(multiples);
             if(multiples_sum > multiples_sum_max) {
                 maximizing_prime = *p;
                 multiples_sum_max = multiples_sum;
