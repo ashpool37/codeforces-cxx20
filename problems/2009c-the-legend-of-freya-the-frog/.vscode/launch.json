@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug The Legend of Freya the Frog",
+            "program": "${workspaceFolder}/2009c-the-legend-of-freya-the-frog.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
