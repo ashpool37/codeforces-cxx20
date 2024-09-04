@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug How Much Does Daytona Cost?",
+            "program": "${workspaceFolder}/1878a-how-much-does-daytona-cost.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
