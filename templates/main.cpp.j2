@@ -205,6 +205,12 @@ auto sum(R const& range) {
     return std::ranges::fold_left(range, 0, std::plus());
 }
 
+template<std::unsigned_integral T>
+T ceil_div(T lhs, T rhs) {
+    if(rhs == 0u) throw std::runtime_error("Division by zero");
+    return (lhs + rhs - 1u) / rhs;
+}
+
 /* #endregion */
 
 int main() {
