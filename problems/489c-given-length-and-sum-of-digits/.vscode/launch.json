@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Given Length and Sum of Digits...",
+            "program": "${workspaceFolder}/489c-given-length-and-sum-of-digits.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
