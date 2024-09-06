@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug My First Sorting Problem",
+            "program": "${workspaceFolder}/1971a-my-first-sorting-problem.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
