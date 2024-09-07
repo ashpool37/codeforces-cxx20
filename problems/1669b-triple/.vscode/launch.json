@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Triple",
+            "program": "${workspaceFolder}/1669b-triple.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
