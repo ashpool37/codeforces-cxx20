@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Fafa and his Company",
+            "program": "${workspaceFolder}/935a-fafa-and-his-company.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
