@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Ten Words of Wisdom",
+            "program": "${workspaceFolder}/1850b-ten-words-of-wisdom.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
