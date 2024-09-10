@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Make it White",
+            "program": "${workspaceFolder}/1927a-make-it-white.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
