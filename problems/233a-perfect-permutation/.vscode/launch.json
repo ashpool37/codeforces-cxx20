@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Perfect Permutation",
+            "program": "${workspaceFolder}/233a-perfect-permutation.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
