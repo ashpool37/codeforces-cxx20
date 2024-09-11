@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Sort the Array",
+            "program": "${workspaceFolder}/451b-sort-the-array.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
