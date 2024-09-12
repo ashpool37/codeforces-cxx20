@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Dreamoon and Stairs",
+            "program": "${workspaceFolder}/476a-dreamoon-and-stairs.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

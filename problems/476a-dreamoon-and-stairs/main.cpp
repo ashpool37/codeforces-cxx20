@@ -1,11 +1,12 @@
-// Problem: {{ contest_number }}{{ problem_letter_upper }}. {{ problem_title }}
-// Problem statement: https://codeforces.com/problemset/problem/{{ contest_number }}/{{ problem_letter_upper }}?locale=en
+// Problem: 476A. Dreamoon and Stairs
+// Problem statement: https://codeforces.com/problemset/problem/476/A?locale=en
 // Solution author: Artem Zhurikhin (https://codeforces.com/profile/Ashpool)
 // Solution license: the Unlicense (Public Domain)
 // More solutions: https://github.com/ashpool37/codeforces-cxx20
 
 /* #region templates */
 
+#include <cstddef>
 #include <iostream>
 #include <charconv>
 #include <ranges>
@@ -246,8 +247,20 @@ OptionalPrintHelper<T, D> print_opt(std::optional<T> const& optional, D const& d
 /* #endregion */
 
 int main() {
-    unsigned const test_count = from_cin();
-    for(auto const _ : counted(test_count)) {
-        
-    }
+    unsigned const stair_count = from_cin();
+    unsigned const factor = from_cin();
+
+    auto step_count_min = [=]() -> std::optional<unsigned> {
+        auto const step_div_result = std::div(static_cast<long>(stair_count), 2l);
+        unsigned twos_count = static_cast<unsigned>(step_div_result.quot);
+        unsigned ones_count = static_cast<unsigned>(step_div_result.rem);
+        while(true) {
+            unsigned total_step_count = twos_count + ones_count;
+            if(total_step_count % factor == 0u) return total_step_count;
+            if(twos_count == 0u) return std::nullopt;
+            twos_count -= 1u;
+            ones_count += 2u;
+        }
+    }();
+    std::cout << print_opt(step_count_min, -1) << std::endl;
 }
