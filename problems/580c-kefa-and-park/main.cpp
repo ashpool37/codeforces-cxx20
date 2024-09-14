@@ -359,6 +359,6 @@ int main() {
     unsigned const cat_in_a_row_count_max = from_cin();
     std::forward_list<Cat> const cats = from_cin(tree_size);
     std::forward_list<TreeEdge> const edges = from_cin(tree_size - 1uz);
-    Tree park(tree_size, cats, edges);
+    Tree const park(tree_size, cats, edges);
     std::cout << park.route_to_leaf_count(cat_in_a_row_count_max) << std::endl;
 }
