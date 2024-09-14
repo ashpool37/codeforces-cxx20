@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Kefa and Park",
+            "program": "${workspaceFolder}/580c-kefa-and-park.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
