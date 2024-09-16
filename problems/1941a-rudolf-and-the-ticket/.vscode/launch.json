@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Rudolf and the Ticket",
+            "program": "${workspaceFolder}/1941a-rudolf-and-the-ticket.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
