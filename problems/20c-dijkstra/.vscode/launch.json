@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Dijkstra?",
+            "program": "${workspaceFolder}/20c-dijkstra.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

@@ -107,10 +107,15 @@ public:
     template<ReadableFromStream T>
     operator std::forward_list<T>() && {
         std::forward_list<T> result;
+        auto result_it = result.before_begin();
+        auto input_it = std::istream_iterator<T>(input_stream);
         if(count) {
-            std::copy_n(std::istream_iterator<T>(input_stream), *count, std::front_inserter(result));
+            result_it = result.insert_after(result_it, *input_it);
+            for(auto const _ : counted(*count - 1uz)) {
+                input_it++;
+                result_it = result.insert_after(result_it, *input_it);
+            }
         }
-        result.reverse();
         return result;
     }
 
