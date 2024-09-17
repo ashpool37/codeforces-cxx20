@@ -267,82 +267,9 @@ OptionalPrintHelper<T, D> print_opt(std::optional<T> const& optional, D const& d
 #include <queue>
 #include <utility>
 
-template<std::integral I>
-class iint {
-    struct infinity_tag {};
-
-    iint(infinity_tag, signed char inf_sign) : value(0), infinity_sign(inf_sign) {}
-
-    I value = 0;
-    signed char infinity_sign = 0;
-public:
-    iint() = default;
-    iint(I val) : value(val), infinity_sign(0) {}
-
-    static iint positive_infinity() { return iint(infinity_tag{}, +1); }
-    static iint negative_infinity() { return iint(infinity_tag{}, -1); }
-
-    auto operator<=>(iint const& other) const {
-        if (infinity_sign == 0 && other.infinity_sign == 0) {
-            return value <=> other.value;
-        } else if (infinity_sign == 0) {
-            return (-other.infinity_sign) <=> 0;
-        } else if (other.infinity_sign == 0) {
-            return infinity_sign <=> 0;
-        } else {
-            return infinity_sign <=> other.infinity_sign;
-        }
-    }
-
-    template<std::integral J>
-    auto operator<=>(J const& rhs) const {
-        if (infinity_sign == 0) {
-            return value <=> rhs;
-        } else if (infinity_sign > 0) {
-            return std::strong_ordering::greater;
-        } else {
-            return std::strong_ordering::less;
-        }
-    }
-
-    template<std::integral J>
-    friend auto operator<=>(J const& lhs, iint const& rhs) {
-        if (rhs.infinity_sign == 0) {
-            return lhs <=> rhs.value;
-        } else if (rhs.infinity_sign > 0) {
-            return std::strong_ordering::less;
-        } else {
-            return std::strong_ordering::greater;
-        }
-    }
-
-    template<std::integral T>
-    explicit operator T() const {
-        if (infinity_sign == 0) {
-            return static_cast<T>(value);
-        } else if (infinity_sign > 0) {
-            return std::numeric_limits<T>::max();
-        } else {
-            if constexpr (std::is_signed_v<T>) {
-                return std::numeric_limits<T>::min();
-            } else {
-                throw std::overflow_error("Cannot cast negative infinity to unsigned integral type");
-            }
-        }
-    }
-
-    explicit operator bool() const {
-        if (infinity_sign != 0) {
-            return true;
-        } else {
-            return value != 0;
-        }
-    }
-};
-
 struct GraphInputEdge {
     std::pair<unsigned, unsigned> nodes;
-    unsigned weight;
+    ull weight;
 
     GraphInputEdge sub1() const {
         return GraphInputEdge{.nodes = {nodes.first - 1u, nodes.second - 1u}, .weight = weight};
@@ -357,7 +284,7 @@ std::istream& operator>>(std::istream& input_stream, GraphInputEdge& edge) {
 class Graph {
     struct Edge {
         unsigned to;
-        unsigned weight;
+        ull weight;
     };
 
     std::vector<std::vector<Edge>> nodes;
@@ -395,7 +322,7 @@ public:
 
     void remove_parallel_edges() {
         for(unsigned node_id = 0u; node_id < size(); node_id++) {
-            std::map<unsigned, unsigned> min_edges;
+            std::map<unsigned, ull> min_edges;
             for(Edge const& edge : nodes[node_id]) {
                 auto const dest_it = min_edges.find(edge.to);
                 if(dest_it == min_edges.end())
@@ -411,12 +338,12 @@ public:
         }
     }
 
-    [[nodiscard]] std::unordered_map<unsigned, unsigned> dijkstra_shortest_paths(unsigned source_id) const {
-        std::unordered_map<unsigned, unsigned> previous;
-        std::vector<iint<unsigned>> distances(size(), iint<unsigned>::positive_infinity());
+    [[nodiscard]] std::vector<unsigned> dijkstra_shortest_paths(unsigned source_id) const {
+        std::vector<unsigned> previous(size(), std::numeric_limits<unsigned>::max());
+        std::vector<ull> distances(size(), std::numeric_limits<ull>::max());
         struct DijkstraNode {
             unsigned node_id;
-            unsigned distance_seen;
+            ull distance_seen;
 
             auto operator<=>(DijkstraNode const& rhs) const {
                 return distance_seen <=> rhs.distance_seen;
@@ -426,7 +353,7 @@ public:
 
         previous[source_id] = source_id;
         distances[source_id] = 0u;
-        to_visit.push({.node_id = source_id, .distance_seen = 0u});
+        to_visit.push({.node_id = source_id, .distance_seen = 0ull});
 
         while(not to_visit.empty()) {
             DijkstraNode const here = to_visit.top();
@@ -434,7 +361,7 @@ public:
 
             if(distances[here.node_id] >= here.distance_seen) {
                 for(auto const edge : nodes[here.node_id]) {
-                    unsigned neighbour_distance_seen = here.distance_seen + edge.weight;
+                    ull neighbour_distance_seen = here.distance_seen + edge.weight;
                     if(distances[edge.to] > neighbour_distance_seen) {
                         distances[edge.to] = neighbour_distance_seen;
                         previous[edge.to] = here.node_id;
@@ -447,17 +374,19 @@ public:
         return previous;
     }
 
-    [[nodiscard]] static std::optional<std::forward_list<unsigned>>
-    dijkstra_reconstruct_path(std::unordered_map<unsigned, unsigned> const& previous, unsigned destination) {
-        auto prev_it = previous.find(destination);
-        if(prev_it == previous.end()) return std::nullopt;
+    [[nodiscard]] static std::optional<std::vector<unsigned>>
+    dijkstra_reconstruct_path(std::vector<unsigned> const& previous, unsigned destination) {
+        if(previous[destination] > previous.size()) return std::nullopt;
 
-        std::forward_list<unsigned> result;
-        result.push_front(destination);
-        while(prev_it->second != prev_it->first) {
-            result.push_front(prev_it->second);
-            prev_it = previous.find(prev_it->second);
+        std::vector<unsigned> result;
+        result.reserve(previous.size());
+        unsigned node_id = destination;
+        result.push_back(node_id);
+        while(previous[node_id] != node_id) {
+            node_id = previous[node_id];
+            result.push_back(node_id);
         }
+        std::ranges::reverse(result);
         return result;
     }
 };
@@ -473,9 +402,9 @@ int main() {
         result.remove_single_edge_loops();
         return result;
     }();
-    std::unordered_map<unsigned, unsigned> dijkstra_previous =
+    std::vector<unsigned> dijkstra_previous =
         graph.dijkstra_shortest_paths(0u);
-    std::optional<std::forward_list<unsigned>> shortest_path =
+    std::optional<std::vector<unsigned>> shortest_path =
         Graph::dijkstra_reconstruct_path(dijkstra_previous, node_count - 1u);
     if(not shortest_path.has_value())
         std::cout << -1 << std::endl;
