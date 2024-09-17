@@ -341,11 +341,11 @@ public:
 };
 
 struct GraphInputEdge {
-    std::pair<std::size_t, std::size_t> nodes;
+    std::pair<unsigned, unsigned> nodes;
     unsigned weight;
 
     GraphInputEdge sub1() const {
-        return GraphInputEdge{.nodes = {nodes.first - 1uz, nodes.second - 1uz}, .weight = weight};
+        return GraphInputEdge{.nodes = {nodes.first - 1u, nodes.second - 1u}, .weight = weight};
     }
 };
 
@@ -356,11 +356,11 @@ std::istream& operator>>(std::istream& input_stream, GraphInputEdge& edge) {
 
 class Graph {
     struct Edge {
-        std::size_t to;
+        unsigned to;
         unsigned weight;
     };
 
-    std::vector<std::forward_list<Edge>> nodes;
+    std::vector<std::vector<Edge>> nodes;
 public:
     template<std::ranges::input_range EdgesR>
     Graph(std::size_t const node_count, std::size_t const edge_count, EdgesR&& edges) 
@@ -369,12 +369,12 @@ public:
         auto edge_it = std::ranges::begin(edges);
         auto const get_edge = [this, &edge_it]() {
             auto const& edge = *edge_it;
-            nodes[edge.nodes.first].push_front(Edge{edge.nodes.second, edge.weight});
-            nodes[edge.nodes.second].push_front(Edge{edge.nodes.first, edge.weight});
+            nodes[edge.nodes.first].push_back(Edge{edge.nodes.second, edge.weight});
+            nodes[edge.nodes.second].push_back(Edge{edge.nodes.first, edge.weight});
         };
-        if(edge_count > 0uz) {
+        if(edge_count > 0u) {
             get_edge();
-            for(auto const _ : counted(edge_count - 1uz)) {
+            for(auto const _ : counted(edge_count - 1u)) {
                 edge_it++;
                 get_edge();
             }
@@ -386,16 +386,16 @@ public:
     }
 
     void remove_single_edge_loops() {
-        for(std::size_t node_id = 0uz; node_id < size(); node_id++) {
+        for(unsigned node_id = 0u; node_id < size(); node_id++) {
             nodes[node_id] =
                 std::views::filter(nodes[node_id], [node_id](Edge const& edge) { return edge.to != node_id; })
-                | std::ranges::to<std::forward_list<Edge>>();
+                | std::ranges::to<std::vector<Edge>>();
         }
     }
 
     void remove_parallel_edges() {
-        for(std::size_t node_id = 0uz; node_id < size(); node_id++) {
-            std::map<std::size_t, unsigned> min_edges;
+        for(unsigned node_id = 0u; node_id < size(); node_id++) {
+            std::map<unsigned, unsigned> min_edges;
             for(Edge const& edge : nodes[node_id]) {
                 auto const dest_it = min_edges.find(edge.to);
                 if(dest_it == min_edges.end())
@@ -407,15 +407,15 @@ public:
                 | std::views::transform([](auto const& pair) {
                     return Edge{.to = pair.first, .weight = pair.second};
                 })
-                | std::ranges::to<std::forward_list<Edge>>();
+                | std::ranges::to<std::vector<Edge>>();
         }
     }
 
-    [[nodiscard]] std::unordered_map<std::size_t, std::size_t> dijkstra_shortest_paths(std::size_t source_id) const {
-        std::unordered_map<std::size_t, std::size_t> previous;
+    [[nodiscard]] std::unordered_map<unsigned, unsigned> dijkstra_shortest_paths(unsigned source_id) const {
+        std::unordered_map<unsigned, unsigned> previous;
         std::vector<iint<unsigned>> distances(size(), iint<unsigned>::positive_infinity());
         struct DijkstraNode {
-            std::size_t node_id;
+            unsigned node_id;
             unsigned distance_seen;
 
             auto operator<=>(DijkstraNode const& rhs) const {
@@ -447,12 +447,12 @@ public:
         return previous;
     }
 
-    [[nodiscard]] static std::optional<std::forward_list<std::size_t>>
-    dijkstra_reconstruct_path(std::unordered_map<std::size_t, std::size_t> const& previous, std::size_t destination) {
+    [[nodiscard]] static std::optional<std::forward_list<unsigned>>
+    dijkstra_reconstruct_path(std::unordered_map<unsigned, unsigned> const& previous, unsigned destination) {
         auto prev_it = previous.find(destination);
         if(prev_it == previous.end()) return std::nullopt;
 
-        std::forward_list<std::size_t> result;
+        std::forward_list<unsigned> result;
         result.push_front(destination);
         while(prev_it->second != prev_it->first) {
             result.push_front(prev_it->second);
@@ -473,15 +473,15 @@ int main() {
         result.remove_single_edge_loops();
         return result;
     }();
-    std::unordered_map<std::size_t, std::size_t> dijkstra_previous =
-        graph.dijkstra_shortest_paths(0uz);
-    std::optional<std::forward_list<std::size_t>> shortest_path =
-        Graph::dijkstra_reconstruct_path(dijkstra_previous, node_count - 1uz);
+    std::unordered_map<unsigned, unsigned> dijkstra_previous =
+        graph.dijkstra_shortest_paths(0u);
+    std::optional<std::forward_list<unsigned>> shortest_path =
+        Graph::dijkstra_reconstruct_path(dijkstra_previous, node_count - 1u);
     if(not shortest_path.has_value())
         std::cout << -1 << std::endl;
     else {
         for(auto const node_id : *shortest_path)
-            std::cout << node_id + 1uz << " ";
+            std::cout << node_id + 1u << " ";
         std::cout << std::endl;
     }
 }
