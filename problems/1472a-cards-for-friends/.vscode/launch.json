@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Cards for Friends",
+            "program": "${workspaceFolder}/1472a-cards-for-friends.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
