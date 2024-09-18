@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Arpa’s hard exam and Mehrdad’s naive cheat",
+            "program": "${workspaceFolder}/742a-arpas-hard-exam-and-mehrdads-naive-cheat.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
