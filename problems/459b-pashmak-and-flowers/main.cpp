@@ -262,7 +262,7 @@ OptionalPrintHelper<T, D> print_opt(std::optional<T> const& optional, D const& d
 /* #endregion */
 
 template<std::ranges::input_range R>
-std::size_t equal_suffix_size(R&& range) {
+std::size_t equal_prefix_size(R&& range) {
     using T = std::ranges::range_value_t<R>;
     auto it = std::ranges::begin(range);
     if(it == std::ranges::end(range)) return 0uz;
@@ -290,8 +290,8 @@ int main() {
     unsigned const least_beautiful_value = flowers[0];
     unsigned const most_beautiful_value = flowers[flower_count - 1u];
     unsigned const beauty_difference = most_beautiful_value - least_beautiful_value;
-    std::size_t const least_beautiful_count = equal_suffix_size(flowers);
-    std::size_t const most_beautiful_count = equal_suffix_size(flowers | std::views::reverse);
+    std::size_t const least_beautiful_count = equal_prefix_size(flowers);
+    std::size_t const most_beautiful_count = equal_prefix_size(flowers | std::views::reverse);
     std::size_t const number_of_ways = least_beautiful_value == most_beautiful_value
         ? choose2(flower_count)
         : least_beautiful_count * most_beautiful_count;
