@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Pashmak and Flowers",
+            "program": "${workspaceFolder}/459b-pashmak-and-flowers.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
