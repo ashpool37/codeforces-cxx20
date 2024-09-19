@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug A and B and Compilation Errors",
+            "program": "${workspaceFolder}/519b-a-and-b-and-compilation-errors.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
