@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Add Odd or Subtract Even",
+            "program": "${workspaceFolder}/1311a-add-odd-or-subtract-even.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
