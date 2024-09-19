@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Sereja and Suffixes",
+            "program": "${workspaceFolder}/368b-sereja-and-suffixes.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
