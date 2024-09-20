@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Kuriyama Mirai's Stones",
+            "program": "${workspaceFolder}/433b-kuriyama-mirai-s-stones.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
