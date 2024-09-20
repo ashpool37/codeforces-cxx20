@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Grab the Candies",
+            "program": "${workspaceFolder}/1807b-grab-the-candies.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
