@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Can I Square?",
+            "program": "${workspaceFolder}/1915c-can-i-square.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
