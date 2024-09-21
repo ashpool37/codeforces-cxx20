@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Robin Hood in Town",
+            "program": "${workspaceFolder}/2014c-robin-hood-in-town.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
