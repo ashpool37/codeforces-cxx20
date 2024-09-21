@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Robin Helps",
+            "program": "${workspaceFolder}/2014a-robin-helps.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
