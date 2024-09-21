@@ -267,12 +267,12 @@ int main() {
     unsigned const test_count = from_cin();
     for(auto const _ : counted(test_count)) {
         unsigned const bucket_count = from_cin();
-        unsigned total_sum = 0u;
+        ull total_sum = 0u;
         for(auto const _ : counted(bucket_count)) {
-            unsigned bucket = from_cin();
+            ull bucket = from_cin();
             total_sum += bucket;
         }
-        unsigned const root = static_cast<unsigned>(std::sqrt(static_cast<double>(total_sum)));
+        ull const root = static_cast<ull>(std::sqrt(static_cast<double>(total_sum)));
         bool const can_square = root * root == total_sum;
         std::cout << (can_square ? "YES" : "NO") << std::endl;
     }
