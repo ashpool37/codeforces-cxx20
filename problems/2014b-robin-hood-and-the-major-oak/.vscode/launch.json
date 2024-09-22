@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Robin Hood and the Major Oak",
+            "program": "${workspaceFolder}/2014b-robin-hood-and-the-major-oak.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
