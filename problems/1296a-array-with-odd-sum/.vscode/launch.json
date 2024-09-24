@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Array with Odd Sum",
+            "program": "${workspaceFolder}/1296a-array-with-odd-sum.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
