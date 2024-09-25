@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Special Permutation",
+            "program": "${workspaceFolder}/1454a-special-permutation.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
