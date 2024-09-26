@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug LCM Problem",
+            "program": "${workspaceFolder}/1389a-lcm-problem.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
