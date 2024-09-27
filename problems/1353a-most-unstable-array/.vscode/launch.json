@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Most Unstable Array",
+            "program": "${workspaceFolder}/1353a-most-unstable-array.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
