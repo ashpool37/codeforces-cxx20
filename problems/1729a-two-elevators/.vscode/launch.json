@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Two Elevators",
+            "program": "${workspaceFolder}/1729a-two-elevators.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
