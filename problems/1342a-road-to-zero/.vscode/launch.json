@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Road To Zero",
+            "program": "${workspaceFolder}/1342a-road-to-zero.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
