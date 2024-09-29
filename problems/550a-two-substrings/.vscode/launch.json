@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Two Substrings",
+            "program": "${workspaceFolder}/550a-two-substrings.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
