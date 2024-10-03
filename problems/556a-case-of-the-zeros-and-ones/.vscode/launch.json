@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Case of the Zeros and Ones",
+            "program": "${workspaceFolder}/556a-case-of-the-zeros-and-ones.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
