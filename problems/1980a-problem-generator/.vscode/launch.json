@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Problem Generator",
+            "program": "${workspaceFolder}/1980a-problem-generator.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
