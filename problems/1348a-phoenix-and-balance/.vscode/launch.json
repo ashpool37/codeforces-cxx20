@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Phoenix and Balance",
+            "program": "${workspaceFolder}/1348a-phoenix-and-balance.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
