@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Park Lighting",
+            "program": "${workspaceFolder}/1358a-park-lighting.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
