@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Two-gram",
+            "program": "${workspaceFolder}/977b-two-gram.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
