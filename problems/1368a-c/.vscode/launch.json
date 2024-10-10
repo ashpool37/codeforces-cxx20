@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug C+=",
+            "program": "${workspaceFolder}/1368a-c.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
