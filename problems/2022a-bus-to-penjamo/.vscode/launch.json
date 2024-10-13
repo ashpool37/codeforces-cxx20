@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Bus to Pénjamo",
+            "program": "${workspaceFolder}/2022a-bus-to-penjamo.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
