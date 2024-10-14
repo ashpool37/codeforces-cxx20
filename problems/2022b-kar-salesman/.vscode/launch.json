@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Kar Salesman",
+            "program": "${workspaceFolder}/2022b-kar-salesman.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
