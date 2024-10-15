@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Three Pairwise Maximums",
+            "program": "${workspaceFolder}/1385a-three-pairwise-maximums.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
