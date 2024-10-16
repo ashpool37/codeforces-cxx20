@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Two Vessels",
+            "program": "${workspaceFolder}/1872a-two-vessels.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
