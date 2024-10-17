@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Casimir's String Solitaire",
+            "program": "${workspaceFolder}/1579a-casimir-s-string-solitaire.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
