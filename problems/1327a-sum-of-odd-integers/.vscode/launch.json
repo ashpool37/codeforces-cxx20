@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Sum of Odd Integers",
+            "program": "${workspaceFolder}/1327a-sum-of-odd-integers.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
