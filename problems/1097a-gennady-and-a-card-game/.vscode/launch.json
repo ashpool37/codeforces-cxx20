@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Gennady and a Card Game",
+            "program": "${workspaceFolder}/1097a-gennady-and-a-card-game.out",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
